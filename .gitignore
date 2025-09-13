@@ -1,0 +1,9 @@
+# deps
+node_modules/
+dist/
+public/
+drizzle/
+.vercel
+
+# files
+.env
