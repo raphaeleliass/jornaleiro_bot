@@ -1,5 +1,5 @@
-import { messagesRoutes } from "./messages.routes";
+import { botRoute } from "./botRoute";
 
 export const router = {
-	messagesRoutes,
+	botRoute,
 };
