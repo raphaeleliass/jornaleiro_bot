@@ -1,9 +1,9 @@
 import { Hono } from "hono";
-import { logger } from "hono/logger";
+import { logger } from "./lib/logger";
 import { router } from "./routes/router";
 
 export const app = new Hono();
 
-app.use(logger());
+app.use(logger);
 
-app.route("/messages", router.messagesRoutes);
+app.route("/api", router.botRoute);
