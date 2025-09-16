@@ -12,7 +12,14 @@ export interface Message {
 	sender_chat?: Chat;
 	chat: Chat;
 	date: number;
-	text?: string;
+	text?:
+		| string
+		| "/start"
+		| "/inscrever"
+		| "/confirmar"
+		| "/sair"
+		| "/termos"
+		| "/ajuda";
 	new_chat_members?: User[];
 	left_chat_member?: User;
 }
