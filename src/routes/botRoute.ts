@@ -1,6 +1,16 @@
 import { Hono } from "hono";
 import { botSecret } from "../constants";
+import { db } from "../lib/db";
+import { BotController } from "../modules/bot/bot.controller";
+import { BotService } from "../modules/bot/bot.service";
+import { UserRepository } from "../modules/user/user.repository";
+import { UserService } from "../modules/user/user.service";
 
 export const botRoute = new Hono();
 
-botRoute.post(`/handler/${botSecret}`);
+const userRepository = new UserRepository(db);
+const userService = new UserService(userRepository);
+const botService = new BotService(userService);
+const botController = new BotController(botService);
+
+botRoute.post(`/handler/${botSecret}`, botController.handler);
