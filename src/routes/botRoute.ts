@@ -1,5 +1,6 @@
 import { Hono } from "hono";
-import { botSecret } from "../constants";
+import { bearerAuth } from "hono/bearer-auth";
+import { botSecret, cronSecret } from "../constants";
 import { db } from "../lib/db";
 import { BotController } from "../modules/bot/bot.controller";
 import { BotService } from "../modules/bot/bot.service";
@@ -14,3 +15,4 @@ const botService = new BotService(userService);
 const botController = new BotController(botService);
 
 botRoute.post(`/handler/${botSecret}`, botController.handler);
+botRoute.get("/summarize", bearerAuth({ token: cronSecret }));
