@@ -21,8 +21,10 @@ export const userTable = sqliteTable("users", {
 export const newsTable = sqliteTable("news", {
 	id: int().primaryKey({ autoIncrement: true }),
 	title: text().notNull(),
-	news: text().notNull(),
+	description: text().notNull(),
 	comment: text().notNull(),
+	imagePath: text("image_path").notNull(),
+	newsUrl: text("news_url").notNull(),
 	createdAt: int("created_at", { mode: "timestamp" }).default(
 		sql`(unixepoch())`,
 	),
