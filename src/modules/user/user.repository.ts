@@ -8,14 +8,9 @@ export class UserRepository {
 
 	constructor(db: DrizzleDB) {
 		this.db = db;
-
-		this.createUser = this.createUser.bind(this);
-		this.findUser = this.findUser.bind(this);
-		this.unsubscribeUser = this.unsubscribeUser.bind(this);
-		this.subscribeUser = this.subscribeUser.bind(this);
 	}
 
-	async findUser(chatId: number) {
+	findUser = async (chatId: number) => {
 		const user = this.db
 			.select()
 			.from(userTable)
@@ -23,15 +18,15 @@ export class UserRepository {
 			.get();
 
 		return user;
-	}
+	};
 
-	async createUser({
+	createUser = async ({
 		name,
 		chatId,
 		isBot,
 		languageCode,
 		subscribed,
-	}: UserTypes) {
+	}: UserTypes) => {
 		const createdUser = await this.db
 			.insert(userTable)
 			.values({ name, chatId, isBot, languageCode, subscribed })
@@ -39,9 +34,9 @@ export class UserRepository {
 			.onConflictDoNothing();
 
 		return createdUser;
-	}
+	};
 
-	async unsubscribeUser(chatId: number) {
+	unsubscribeUser = async (chatId: number) => {
 		const unsubscribedUser = await this.db
 			.update(userTable)
 			.set({ subscribed: false })
@@ -49,9 +44,9 @@ export class UserRepository {
 			.returning();
 
 		return unsubscribedUser;
-	}
+	};
 
-	async subscribeUser(chatId: number) {
+	subscribeUser = async (chatId: number) => {
 		const subscribeUser = await this.db
 			.update(userTable)
 			.set({ subscribed: true })
@@ -59,5 +54,14 @@ export class UserRepository {
 			.returning();
 
 		return subscribeUser;
-	}
+	};
+
+	getAllSubscribedUsers = async () => {
+		const users = await this.db
+			.select()
+			.from(userTable)
+			.where(eq(userTable.subscribed, true));
+
+		return users;
+	};
 }
