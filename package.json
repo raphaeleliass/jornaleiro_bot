@@ -1,7 +1,7 @@
 {
 	"name": "jornaleiro_bot",
 	"scripts": {
-		"build": "tsdown",
+		"build": "drizzle-kit push && tsdown",
 		"dev": "cross-env NODE_ENV=development bun run --hot src/index.ts",
 		"db:generate": "drizzle-kit generate",
 		"db:push": "drizzle-kit push",
