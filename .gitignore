@@ -2,11 +2,13 @@
 node_modules/
 dist/
 public/
-drizzle/
 .vercel
 
-# files
+# envs & configs locais
 .env
+
+# DB local
 /src/db/*.db
 /src/db/*.sqlite
-.sqlite
+*.sqlite
+*.db
