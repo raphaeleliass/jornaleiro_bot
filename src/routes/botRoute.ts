@@ -14,5 +14,5 @@ const userService = new UserService(userRepository);
 const botService = new BotService(userService);
 const botController = new BotController(botService);
 
-botRoute.post(`/handler/${botSecret}`, botController.handler);
+botRoute.post(`/webhook/${botSecret}`, botController.handler);
 botRoute.get("/summarize", bearerAuth({ token: cronSecret }));
