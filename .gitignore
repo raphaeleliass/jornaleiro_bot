@@ -7,3 +7,6 @@ drizzle/
 
 # files
 .env
+/src/db/*.db
+/src/db/*.sqlite
+.sqlite
