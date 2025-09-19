@@ -6,7 +6,7 @@ export const app = new Hono();
 
 app.use(logger);
 
-app.get("/", c=>{
-  return c.text("Hello, Jornaleiro_bot!")
-})
+app.get("/", (c) => {
+	return c.text("Hello, Jornaleiro_bot!");
+});
 app.route("/api", router.botRoute);
