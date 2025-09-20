@@ -1,77 +1,9 @@
 {
 	"version": "6",
 	"dialect": "sqlite",
-	"id": "92fcb974-1fee-4057-ab7d-f4b7ed1e95dd",
+	"id": "f20ee611-3726-4529-93d4-b8b4437ab659",
 	"prevId": "00000000-0000-0000-0000-000000000000",
 	"tables": {
-		"news": {
-			"name": "news",
-			"columns": {
-				"id": {
-					"name": "id",
-					"type": "integer",
-					"primaryKey": true,
-					"notNull": true,
-					"autoincrement": true
-				},
-				"title": {
-					"name": "title",
-					"type": "text",
-					"primaryKey": false,
-					"notNull": true,
-					"autoincrement": false
-				},
-				"description": {
-					"name": "description",
-					"type": "text",
-					"primaryKey": false,
-					"notNull": true,
-					"autoincrement": false
-				},
-				"comment": {
-					"name": "comment",
-					"type": "text",
-					"primaryKey": false,
-					"notNull": true,
-					"autoincrement": false
-				},
-				"image_path": {
-					"name": "image_path",
-					"type": "text",
-					"primaryKey": false,
-					"notNull": true,
-					"autoincrement": false
-				},
-				"news_url": {
-					"name": "news_url",
-					"type": "text",
-					"primaryKey": false,
-					"notNull": true,
-					"autoincrement": false
-				},
-				"created_at": {
-					"name": "created_at",
-					"type": "integer",
-					"primaryKey": false,
-					"notNull": false,
-					"autoincrement": false,
-					"default": "(unixepoch())"
-				},
-				"updated_at": {
-					"name": "updated_at",
-					"type": "integer",
-					"primaryKey": false,
-					"notNull": false,
-					"autoincrement": false,
-					"default": "(unixepoch())"
-				}
-			},
-			"indexes": {},
-			"foreignKeys": {},
-			"compositePrimaryKeys": {},
-			"uniqueConstraints": {},
-			"checkConstraints": {}
-		},
 		"users": {
 			"name": "users",
 			"columns": {

@@ -5,15 +5,8 @@
 		{
 			"idx": 0,
 			"version": "6",
-			"when": 1758234286749,
-			"tag": "0000_good_scrambler",
-			"breakpoints": true
-		},
-		{
-			"idx": 1,
-			"version": "6",
-			"when": 1758323570296,
-			"tag": "0001_kind_gauntlet",
+			"when": 1758327714813,
+			"tag": "0000_tense_nico_minoru",
 			"breakpoints": true
 		}
 	]
