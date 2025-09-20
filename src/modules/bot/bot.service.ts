@@ -79,6 +79,7 @@ export class BotService {
 
 		if (!registeredUser) {
 			await this.userService.createUser(userData);
+			console.log("novo usuário");
 			return await telegram.sendMessage({
 				chatId: userData.chatId,
 				text: messages.register.newUser,
